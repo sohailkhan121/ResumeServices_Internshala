@@ -25,6 +25,7 @@
     --shadow-sm: 0 6px 14px rgba(0,0,0,.07);
     --shadow-md: 0 14px 34px rgba(0,0,0,.14);
     --radius: 16px;
+    --header-h: 64px;
   }
   
   /* ------------------------------
@@ -57,7 +58,7 @@
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 100;
     background: #fff;
     box-shadow: 0 1px 0 rgba(0,0,0,.06);
   }
@@ -67,6 +68,7 @@
     align-items: center;
     gap: 28px;
     padding: 16px 0;
+    min-height: var(--header-h);
   }
   
   .brand {
@@ -172,6 +174,8 @@
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    position: relative;
+    z-index: 110;
   }
   .hamburger span {
     width: 22px;
@@ -394,14 +398,17 @@
   @media (max-width: 840px) {
     .menu {
       position: fixed;
-      inset: 64px 0 auto 0;
+      top: var(--header-h);
+      left: 0; right: 0;
       background: #fff;
-      padding: 16px 24px;
+      padding: 16px 24px 20px;
       display: grid;
       gap: 12px;
       border-bottom: 1px solid #eee;
-      transform: translateY(-120%);
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      transform: translateY(-140%);
       transition: transform .25s ease;
+      z-index: 90; /* below header, above content */
     }
     .hamburger { display: flex; margin-left: auto; }
     .nav-cta { display: none; }
