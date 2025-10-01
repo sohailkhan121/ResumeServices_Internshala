@@ -48,7 +48,7 @@ Mobile: 1-column layout, collapsible menu
 🌐 Live Demo
 
 👉 View Live Project
- (replace with your deployed link)
+https://sohailkhan121.github.io/ResumeServices_Internshala/#packages
 
 📂 Folder Structure
 /project-root
